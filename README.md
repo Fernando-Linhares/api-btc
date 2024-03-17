@@ -21,10 +21,10 @@ Run App
 List Wallets
 | Method | Uri | Body |
 |  --------  |  -------  |  ------- |
-| GET | http://localhost:5000/ | none |
+| GET | ```http://localhost:5000/``` | none |
 ####
 | Response | 200 |
-| ------ | ---- | ---- |
+| ------ | ---- |
 
 ```json
 {
@@ -46,10 +46,10 @@ List Wallets
 Generate Private Key
 | Method | Uri | Body |
 |  --------  |  -------  |  ------- |
-| GET | http://localhost:5000/key | none |
+| GET | ```http://localhost:5000/key``` | none |
 ####
 | Response | 200 |
-| ------ | ---- | ---- |
+| ------ | ---- |
 
 ```json
 {
@@ -63,7 +63,7 @@ Generate Private Key
 Create an Wallet
 | Method | Uri | Body |
 |  --------  |  -------  |  ------- |
-| POST | http://localhost:5000/wallet | Form |
+| POST | ```http://localhost:5000/wallet``` | Form |
 ####
 
 Body Request
@@ -74,7 +74,7 @@ Body Request
 
 ####
 | Response | 201 |
-| ------ | ---- | ---- |
+| ------ | ---- |
 
 ```json
 {
@@ -98,7 +98,7 @@ Body Request
 Access an Wallet
 | Method | Uri | Body |
 |  --------  |  -------  |  ------- |
-| POST | http://localhost:5000/wallet/access | Form |
+| POST | ```http://localhost:5000/wallet/access``` | Form |
 ####
 
 Body Request
@@ -109,7 +109,7 @@ Body Request
 
 ####
 | Response | 201 |
-| ------ | ---- | ---- |
+| ------ | ---- |
 
 ```json
 {
@@ -136,10 +136,10 @@ Show Wallet
 
 | Method | Uri | Body |
 |  --------  |  -------  |  ------- |
-| GET | http://localhost:5000/wallet/2 | none |
+| GET | ```http://localhost:5000/wallet/2``` | none |
 ####
 | Response | 200 |
-| ------ | ---- | ---- |
+| ------ | ---- |
 
 ```json
 {
@@ -164,10 +164,10 @@ Delete Wallet
 
 | Method | Uri | Body |
 |  --------  |  -------  |  ------- |
-| DELETE | http://localhost:5000/wallet/1 | none |
+| DELETE | ```http://localhost:5000/wallet/1``` | none |
 ####
 | Response | 201 |
-| ------ | ---- | ---- |
+| ------ | ---- |
 
 ```json
 {
@@ -180,10 +180,10 @@ Delete Wallet
 
 | Method | Uri | Body |
 |  --------  |  -------  |  ------- |
-| DELETE | http://localhost:5000/wallet/1/qrcode | none |
+| DELETE | ```http://localhost:5000/wallet/1/qrcode``` | none |
 ####
 | Response | 200 |
-| ------ | ---- | ---- |
+| ------ | ---- |
 
 ```json
 {
