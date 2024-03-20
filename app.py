@@ -1,24 +1,25 @@
 from flask import Flask, Response, request
 from actions import *
+import asyncio
 
 app = Flask(__name__)
 
 @app.route('/')
-def index():
+async def index():
     return {"data": show_wallets()}
 
 @app.route('/key')
-def key():
+async def key():
     return {"data": {"passphrase": get_passphrases()}}
 
 @app.route('/wallet', methods = ['POST'])
-def makewallet():
+async def makewallet():
     p = request.form['passphrase']
     n = request.form['walletname']
     return create_wallet(n, p), 201
 
 @app.route('/wallet/<id>')
-def findwallet(id):
+async def findwallet(id):
     w = find_wallet(id)
 
     if w is not None:
@@ -27,7 +28,7 @@ def findwallet(id):
     return {"error":"not found"} , 404
 
 @app.route('/wallet/<id>', methods = ['DELETE'])
-def wallet(id):
+async def wallet(id):
     w = find_wallet(id)
 
     if w is not None:
@@ -36,11 +37,11 @@ def wallet(id):
     return {"error": "not found"} , 404
 
 @app.route('/wallet/access', methods=['POST'])
-def login():
+async def login():
     return {'data' : access_wallet(request.form['walletname'], request.form['passphrase'])}, 200
 
 @app.route('/wallet/<id>/qrcode')
-def qrcodegenerate(id):
+async def qrcodegenerate(id):
     return generate_qrcode(id), 200
 
 if __name__ == '__main__':
