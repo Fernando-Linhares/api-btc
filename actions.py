@@ -1,5 +1,6 @@
 from bitcoinlib.wallets import Wallet, wallet_create_or_open, wallets_list, wallet_delete_if_exists, HDKey
 from bitcoinlib.mnemonic import Mnemonic
+from bitcoinlib.services.services import Service
 
 def show_wallets():
     return wallets_list()
@@ -52,3 +53,8 @@ def make_transaction(id, address, value):
 def generate_qrcode(walletid):
     w = Wallet(walletid)
     return {"qrcode": f"https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl={w.get_key().address}"}
+
+def gettransactioninfo(id, n):
+    service = Service(network=n)
+    t = service.gettransaction(id)
+    return t.as_dict()

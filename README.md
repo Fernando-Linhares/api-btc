@@ -190,6 +190,72 @@ Delete Wallet
 	"qrcode": "https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=1Cj5R...."
 }
 ```
+
+-----
+Transaction Send
+
+| Method | Uri | Body |
+|  --------  |  -------  |  ------- |
+| POST | ```http://localhost:5000/transaction``` | Form |
+
+####
+Body Request
+| Form Field | Value |
+|  --------  |  -------  |
+| ```address``` | ```asdasdasdasdasdasd ....``` |
+| ```wallet``` | ```[id or name]``` |
+| ```value``` | ```0.0031``` |
+| ```network``` | ```bitcoin``` |
+
+####
+| Response | 201 |
+| ------ | ---- |
+
+```json
+	{
+		"block_hash": null,
+		"block_height": 837850,
+		"coinbase": false,
+		"confirmations": 458,
+		"date": "Fri, 05 Apr 2024 15:57:57 GMT",
+		"fee": 6000,
+		"fee_per_kb": 5976,
+		"flag": null,
+		"input_total": 360912654,
+		"inputs": [
+			...
+		]
+		...
+	}
+```
+
+List Wallets
+| Method | Uri | Body |
+|  --------  |  -------  |  ------- |
+| GET | ```http://localhost:5000/transaction/<id>/info``` | none |
+####
+| Response | 200 |
+| ------ | ---- |
+
+```json
+	{
+		"block_hash": null,
+		"block_height": 837850,
+		"coinbase": false,
+		"confirmations": 458,
+		"date": "Fri, 05 Apr 2024 15:57:57 GMT",
+		"fee": 6000,
+		"fee_per_kb": 5976,
+		"flag": null,
+		"input_total": 360912654,
+		"inputs": [
+			...
+		]
+		...
+	}
+```
+------------
+
 ### Dependencies
 [Python 3.10](https://docs.python.org/3.10/)
  [Flask 3.0](https://flask.palletsprojects.com/en/3.0.x/)

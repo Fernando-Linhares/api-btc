@@ -44,5 +44,21 @@ async def login():
 async def qrcodegenerate(id):
     return generate_qrcode(id), 200
 
+@app.route('/transaction/<id>/<network>/info')
+async def transactioninfo(id, network):
+    return gettransactioninfo(id, network)
+
+@app.route('/transaction', methods=['POST'])
+async def transactionsend():
+    addr = request.form['address']
+    val = request.form['value']
+    net = request.form['network']
+    w = request.form['wallet']
+
+    wallet = Wallet(w)
+    t = val.send_to(address, val, network=net)
+
+    return t.as_dict() , 201
+
 if __name__ == '__main__':
     app.run(debug=True)
