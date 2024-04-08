@@ -7,10 +7,10 @@ Backend implementation of bitcoin wallet, for make service of wallet bitcoin.
 ### Usage
 Install flask
 	
-			pip install flask
+	pip install flask
 Install Bitcoinloib
 		
-			pip install bitcoinlib
+	pip install bitcoinlib
 			
 Run App
 	
