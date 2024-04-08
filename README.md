@@ -229,7 +229,7 @@ Body Request
 	}
 ```
 
-List Wallets
+Transaction Info
 | Method | Uri | Body |
 |  --------  |  -------  |  ------- |
 | GET | ```http://localhost:5000/transaction/<id>/info``` | none |
